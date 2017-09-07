@@ -1,0 +1,21 @@
+extends layout
+block content
+  h1= title
+  div(class="col-md-3")
+  form(method="POST", action="../../users")
+    .row
+      .col-md-3
+        label(for="username") Nombre
+        input(type="text", class="form-control" name="username")
+    .row
+      .col-md-3
+        label(for="email") Email
+        input(type="text", class="form-control" name="email")
+    .row
+      .col-md-3
+        label(for="password") Password
+        input(type="password", class="form-control" name="password")
+    .row
+      .col-md-3
+        input(type="submit", class="form-control btn btn-primary" value="Crear Usuario")
+
