@@ -21,14 +21,14 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-//var server = http.createServer(app);
+var server = http.createServer(app);
 
 /** Servidor con redirecionamiento proxy
  * para esto deberemos tener activo el servidor del puerto 5060 para que funcione correctamente.
  */
-var server = http.createServer(function(req, res){
+/*var server = http.createServer(function(req, res){
   proxy.web(req, res, {target:'http://127.0.0.1:5060'})
-})
+})*/
 
 /**
  * Listen on provided port, on all network interfaces.

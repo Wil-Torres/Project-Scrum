@@ -1,5 +1,6 @@
 var express = require('express');
 var UserModel = require('../models/users');
+var projectModel = require('../models/proyectos');
 var router = express.Router();
 
 /* GET home page. */
@@ -14,6 +15,13 @@ router.get('/', function(req, res, next) {
 .get('/users', function(req, res, next) {
   let info = {};
   UserModel.getUsers(function(error, data){
+    res.json(200, data);
+  })
+  //res.render('users', { title: 'Iniciando seccion de usuarios', subtitle: 'Pagina en Construnccion'});
+})
+.get('/projects', function(req, res, next) {
+  console.log('ento al get de proyectos')
+  projectModel.getProjects(function(error, data){
     res.json(200, data);
   })
   //res.render('users', { title: 'Iniciando seccion de usuarios', subtitle: 'Pagina en Construnccion'});
